@@ -12,6 +12,9 @@ branches:
   except:
     - /^v1\.\d+/
 
+install:
+- php vendor/vendors.php
+
 before_script:
 - mkdir -p build/logs
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter 
