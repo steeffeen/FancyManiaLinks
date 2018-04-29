@@ -1,5 +1,5 @@
 {
-  "name": "steeffeen/fancymanialinks",
+  "name": "steeffffeen/fancymanialinks",
   "description": "ManiaLink Framework for Object-Based XML Generation",
   "keywords": [
     "ManiaPlanet",
@@ -10,7 +10,7 @@
     "ManiaScript",
     "XML"
   ],
-  "homepage": "https://github.com/steeffeen/FancyManiaLinks",
+  "homepage": "https://github.com/steeffffeen/FancyManiaLinks",
   "license": "GPL-3.0",
   "authors": [
     {
