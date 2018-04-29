@@ -1,7 +1,6 @@
 language: php
 
 php:
-# - 5.3
   - 5.4
   - 5.5
   - 5.6
@@ -13,14 +12,15 @@ branches:
   except:
     - /^v1\.\d+/
 
-before_install:
-- composer require --dev codeclimate/php-test-reporter
-
 before_script:
 - mkdir -p build/logs
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter 
+- chmod +x ./cc-test-reporter 
+- ./cc-test-reporter before-build
 
 script:
 - vendor/bin/phpunit
 
 after_script:
-- php vendor/bin/test-reporter
+- mv tests/_output/coverage.xml clover.xml 
+- ./cc-test-reporter after-build --coverage-input-type clover --id 12345 --exit-code $TRAVIS_TEST_RESULT
